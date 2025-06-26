@@ -1,0 +1,35 @@
+---
+title: "El RMS Titanic"
+author: "Manuel Vargas"
+format: html
+lang: es
+---
+
+```{r}
+#| label: carga-paquetes
+#| echo: false
+
+library(titanic)
+```
+
+
+El [Titanic](https://es.wikipedia.org/wiki/RMS_Titanic#:~:text=El%20RMS%20Titanic%20fue%20un%20transatl%C3%A1ntico%20brit%C3%A1nico,para%20la%20compa%C3%B1%C3%ADa%20naviera%20White%20Star%20Line.&text=El%20naufragio%20del%20Titanic%20conmocion%C3%B3%20e%20indign%C3%B3,por%20los%20errores%20cometidos%20en%20el%20accidente.) fue un transatlántico británico que se hundió en su viaje inaugural en 1912 después de chocar con un *iceberg*. La tragedia conmocionó al mundo debido al gran número de víctimas y a los errores cometidos durante el naufragio. El barco, considerado en su época como el más grande y lujoso, **se hundió en el Atlántico Norte a una profundidad de aproximadamente 3,800 metros**, y sus restos fueron descubiertos en 1985. 
+
+![Fotografía del Titanic](RMS_Titanic_3.jpg)
+
+```{r}
+#| label: grafico-pasajeros
+#| echo: false
+
+# Cantidades de pasajeros por clase
+pasajeros_por_clase <- table(titanic_train$Pclass)
+
+# Gráfico de barras por clase de pasajero
+barplot(
+  height = pasajeros_por_clase,
+  main = "Cantidad de pasajeros por clase en el Titanic",
+  xlab = "Clase",
+  ylab = "Cantidad de pasajeros"  
+)
+```
+
